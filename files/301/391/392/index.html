@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>  
+<html>	
+<head>	
+<title>	
+</title>	
+</head>	
+<body>	
+<a href="http://www.beautifullover.org" target="_blank">	
+beautifullover </a>	
+</br>	
+<a href="https://github.com/littleflute/BlCDs/issues/519" target="_blank">	
+issue519 </a>	
+<p id="demo" style="border:1px solid red;"></p>						
+<script>								
+var xmlhttp = new XMLHttpRequest();				
+xmlhttp.onreadystatechange = function() {				
+       myObj = JSON.parse(this.responseText);			
+       document.getElementById("demo").innerHTML = myObj.name;	
+   }								
+};									
+xmlhttp.open("GET", "djson.txt", true);				
+xmlhttp.send();							
+</script>							
+</body>	
+</html>	
