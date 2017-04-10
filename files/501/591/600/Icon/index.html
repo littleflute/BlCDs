@@ -1,0 +1,50 @@
+<!DOCTYPE html>	  
+<html>  
+<body> 
+ECHO is off.
+<br> 
+<div id="DivCurTime"></div> 
+<br> 
+<button onclick="getCurTime()" type="button">Get current time position</button>  
+<button onclick="setCurTime(0)" type="button">00</button><br>   
+<button onclick="moveMS(-0.05)" type="button">Time-50ms</button>  
+<button onclick="moveMS(-0.01)" type="button">-10ms</button>  
+<button onclick="moveMS(0.01)" type="button">+10ms</button>  
+<button onclick="moveMS(0.05)" type="button">+50ms</button>  
+<button onclick="setCurTime(5)" type="button">Set time position to 5 seconds</button><br>   
+<button onclick="play('01 I Saw the Light.mp3       ')">01 I Saw the Light.mp3       </button> 
+<button onclick="play('02 New Mule Skinner Blues.mp3       ')">02 New Mule Skinner Blues.mp3       </button> 
+<button onclick="play('03 Uncle Pen.mp3       ')">03 Uncle Pen.mp3       </button> 
+<button onclick="play('04 Kentucky Waltz.mp3       ')">04 Kentucky Waltz.mp3       </button> 
+<button onclick="play('05 Footprints in the Snow.mp3       ')">05 Footprints in the Snow.mp3       </button> 
+<button onclick="play('06 Walk Softly On My Heart.mp3       ')">06 Walk Softly On My Heart.mp3       </button> 
+<button onclick="play('07 In the Pines.mp3       ')">07 In the Pines.mp3       </button> 
+<button onclick="play('08 Blue Moon of Kentucky.mp3       ')">08 Blue Moon of Kentucky.mp3       </button> 
+<button onclick="play('09 I'm Working On a Building.mp3       ')">09 I'm Working On a Building.mp3       </button> 
+<button onclick="play('10 Gotta Travel On.mp3       ')">10 Gotta Travel On.mp3       </button> 
+<button onclick="play('11 Roll On Buddy  Roll On.mp3      ')">11 Roll On Buddy  Roll On.mp3      </button> 
+<br> 
+<audio id="myPlayer" width="720" height="480" controls> 
+ <source src="0.mp3" type="video/mp4">  
+Your browser does not support HTML5 audio. 
+</audio>  
+<script>  
+var vid = document.getElementById("myPlayer"); 
+function play(fileName) {
+    myPlayer.src=fileName; 
+    myPlayer.load();
+    myPlayer.play(); 
+}
+function getCurTime() {  
+   document.getElementById("DivCurTime").innerHTML= vid.currentTime; 
+}   
+function setCurTime(t) { 
+   vid.currentTime=t;  
+   getCurTime();
+}  
+function moveMS(ms) { 
+  vid.currentTime+=ms;
+  getCurTime();  
+}   
+</script> 
+</body> 
