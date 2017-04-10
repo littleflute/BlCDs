@@ -1,0 +1,58 @@
+<!DOCTYPE html>	  
+<html>  
+<body> 
+v2.2 
+<br> 
+<div id="DivCurTime"></div> 
+<br> 
+<button onclick="getCurTime()" type="button">Get current time position</button>  
+<button onclick="setCurTime(0)" type="button">00</button><br>   
+<button onclick="moveMS(-0.05)" type="button">Time-50ms</button>  
+<button onclick="moveMS(-0.01)" type="button">-10ms</button>  
+<button onclick="moveMS(0.01)" type="button">+10ms</button>  
+<button onclick="moveMS(0.05)" type="button">+50ms</button>  
+<button onclick="setCurTime(5)" type="button">Set time position to 5 seconds</button><br>   
+<button onclick="play('01 Hand Clappin'.mp3       ')">01 Hand Clappin'.mp3       </button> 
+<button onclick="play('02 Shake  Rattle & Roll.mp3      ')">02 Shake  Rattle & Roll.mp3      </button> 
+<button onclick="play('03 Jump  Jive  An' Wail.mp3     ')">03 Jump  Jive  An' Wail.mp3     </button> 
+<button onclick="play('04 Good Rockin' Tonight.mp3       ')">04 Good Rockin' Tonight.mp3       </button> 
+<button onclick="play('05 Rockin' at Midnight.mp3       ')">05 Rockin' at Midnight.mp3       </button> 
+<button onclick="play('06 Hoy Hoy.mp3       ')">06 Hoy Hoy.mp3       </button> 
+<button onclick="play('07 The Train Kept A-Rollin'.mp3       ')">07 The Train Kept A-Rollin'.mp3       </button> 
+<button onclick="play('08 Juicy Fruit [-].mp3       ')">08 Juicy Fruit [-].mp3       </button> 
+<button onclick="play('09 In My Real Gone Rocket.mp3       ')">09 In My Real Gone Rocket.mp3       </button> 
+<button onclick="play('10 Cadillac Boogie [-].mp3       ')">10 Cadillac Boogie [-].mp3       </button> 
+<button onclick="play('11 Got My Mo-Jo Working (But It Just Won't Work on You).mp3       ')">11 Got My Mo-Jo Working (But It Just Won't Work on You).mp3       </button> 
+<br> 
+<button onclick="play('12 Hop  Skip and Jump.mp3      ')">12 Hop  Skip and Jump.mp3      </button> 
+<button onclick="play('13 Deacon's Hop [-].mp3       ')">13 Deacon's Hop [-].mp3       </button> 
+<button onclick="play('14 Rock My Blues Away.mp3       ')">14 Rock My Blues Away.mp3       </button> 
+<button onclick="play('15 Hound Dog.mp3       ')">15 Hound Dog.mp3       </button> 
+<button onclick="play('16 'Til the Well Runs Dry [-].mp3       ')">16 'Til the Well Runs Dry [-].mp3       </button> 
+<button onclick="play('17 Why Don't You Haul Off and Love Me.mp3       ')">17 Why Don't You Haul Off and Love Me.mp3       </button> 
+<button onclick="play('18 Hello Little Boy.mp3       ')">18 Hello Little Boy.mp3       </button> 
+<br> 
+<audio id="myPlayer" width="720" height="480" controls> 
+ <source src="0.mp3" type="video/mp4">  
+Your browser does not support HTML5 audio. 
+</audio>  
+<script>  
+var vid = document.getElementById("myPlayer"); 
+function play(fileName) {
+    myPlayer.src=fileName; 
+    myPlayer.load();
+    myPlayer.play(); 
+}
+function getCurTime() {  
+   document.getElementById("DivCurTime").innerHTML= vid.currentTime; 
+}   
+function setCurTime(t) { 
+   vid.currentTime=t;  
+   getCurTime();
+}  
+function moveMS(ms) { 
+  vid.currentTime+=ms;
+  getCurTime();  
+}   
+</script> 
+</body> 
